@@ -69,3 +69,12 @@ export type UpdateMessageEvent = {
 // TODO/typescript: Move the User and Stream placeholder
 // types to their appropriate modules.
 export type User = Record<string, never>;
+
+export type DoSettingsChangeOptions = {
+    success_msg_html: string;
+    failure_msg_html: string;
+    success_continuation?: (data: unknown) => void;
+    error_continuation?: (xhr: JQuery.jqXHR) => void;
+    sticky: boolean;
+    $error_msg_element?: JQuery<HTMLElement>;
+};
